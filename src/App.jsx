@@ -11,6 +11,8 @@ function App() {
         filters: [],
       });
 
+      console.log('DEVICE', device)
+
       if (!devices.some((d) => d.vendorId === device.vendorId)) {
         setDevices([...devices, device]);
       }
