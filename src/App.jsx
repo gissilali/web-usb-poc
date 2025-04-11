@@ -8,10 +8,10 @@ function App() {
     setIsFetching(true);
     try {
       const device = await navigator.usb.requestDevice({
-        filters: [{ vendorId: '1321' }],
+        filters: [],
       });
 
-      if (!devices.some((device) => device.vendorId.toString() === '1321')) {
+      if (!devices.some((d) => d.vendorId === device.vendorId)) {
         setDevices([...devices, device]);
       }
 
